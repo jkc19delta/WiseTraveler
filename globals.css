@@ -1,5 +1,16 @@
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+footer{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px;
+  background-color:  #333;
+  margin-top: auto;
 }
 
 .header {
@@ -14,6 +25,8 @@ body {
 }
 
 .navbar {
+  display: flex;
+  justify-content: space-evenly;
   overflow: hidden;
   background-color: #333;
 }
