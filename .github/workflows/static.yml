@@ -40,8 +40,9 @@ jobs:
       - name: Install dependencies
         run: |
           gem install bundler --user-install          # Install Bundler for the user
+          cd docs                                      # Change to the docs directory
           bundle install                               # Install dependencies
-          bundle exec jekyll build --source docs --destination docs/_site  # Build the site
+          bundle exec jekyll build --source . --destination ../_site  # Build the site
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
