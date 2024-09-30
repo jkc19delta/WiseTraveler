@@ -14,7 +14,7 @@ footer{
 }
 
 .header {
-  padding: 80px;
+  padding: 0px;
   text-align: center;
   background: #bdab0e;
   color: white;
@@ -22,6 +22,21 @@ footer{
 
 .header h1 {
   font-size: 40px;
+}
+
+.company-info {
+    text-align: center;
+}
+
+.company-name {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.company-motto {
+    font-size: 20px;        
+    line-height: 1.2;         
+    color: white;             
 }
 
 .navbar {
