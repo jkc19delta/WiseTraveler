@@ -11,10 +11,6 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   deploy:
     environment:
@@ -25,15 +21,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
       - name: Install Bundler
         run: gem install bundler --user-install
 
+      - name: Set up PATH
+        run: echo "$HOME/.local/share/gem/ruby/3.0.0/bin" >> $GITHUB_ENV
+
       - name: Install Dependencies
         run: |
-          export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
           bundle install
 
       - name: Build the Site
@@ -48,4 +43,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
