@@ -1,48 +1,21 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    branches:
+      - main  # Change this if your default branch is different
 
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install Bundler
-        run: gem install bundler --user-install
-
-      - name: Set up PATH and Install Dependencies
-        run: |
-          echo "$HOME/.local/share/gem/ruby/3.0.0/bin" >> $GITHUB_ENV
-          export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
-          bundle install
-        env:
-          GITHUB_PAGES: true
-
-      - name: Build the Site
-        run: |
-          export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
-          bundle exec jekyll build --source . --destination _site
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./  # This points to the root directory, including your img folder
