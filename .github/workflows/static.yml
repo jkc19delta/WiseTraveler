@@ -9,13 +9,20 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Build with Jekyll
+        run: |
+          gem install bundler
+          bundle install
+          bundle exec jekyll build -d _site  # Specify your output directory
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./  # This points to the root directory, including your img folder
+          publish_dir: ./_site  # Adjust if your Jekyll output directory is different
+
