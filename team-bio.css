@@ -1,5 +1,5 @@
 /* Container for team bio section */
-.row1 {
+.team {
     display: flex;               
     flex-wrap: wrap;            
     justify-content: center;     
@@ -7,32 +7,32 @@
 }
 
 /* Style for each team member cell */
-.row1 td {
+.team td {
     width: 400px;               
-    padding: 30px;              
+    padding: 10px;              
     text-align: center;         
 }
 
 /* Style for images */
-.row1 img {
+.team img {
     max-width: 100%;            
     height: 300;               
 }
 
 /* General styling for team member text */
-.row1 p {
+.team p {
     margin: 10px 0;            
     font-size: 16px;           
     font-weight: normal;
 }
 
 /* Make the team member names bold */
-.row1 p b {
+.team p b {
     font-weight: bold;
 }
 
 /* Header style for the main section */
-.row1 td:first-child {
+.team td:first-child {
     font-size: 36px;           
     font-weight: bold;
 }
