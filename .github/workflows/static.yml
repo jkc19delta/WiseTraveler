@@ -24,13 +24,13 @@ jobs:
       - name: Install Bundler
         run: gem install bundler --user-install
 
-      - name: Set up PATH
-        run: echo "$HOME/.local/share/gem/ruby/3.0.0/bin" >> $GITHUB_ENV
-
-      - name: Install Dependencies
+      - name: Set up PATH and Install Dependencies
         run: |
+          echo "$HOME/.local/share/gem/ruby/3.0.0/bin" >> $GITHUB_ENV
           export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
           bundle install
+        env:
+          GITHUB_PAGES: true
 
       - name: Build the Site
         run: |
@@ -45,4 +45,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
