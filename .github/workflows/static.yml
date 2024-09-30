@@ -14,10 +14,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'  # Use the Ruby version you need
+          bundler-cache: true   # Cache gems for faster builds
+
       - name: Build with Jekyll
         run: |
-          gem install bundler
-          bundle install
           bundle exec jekyll build -d _site  # Specify your output directory
 
       - name: Deploy to GitHub Pages
