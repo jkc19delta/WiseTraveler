@@ -1,4 +1,5 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 3.9.0"  # Adjust the version as needed
-gem "github-pages"          # Include if you're using GitHub Pages
+gem "jekyll", "~> 4.2"
+gem "jekyll-sass-converter" # Include if using SCSS
+gem "github-pages", group: :jekyll_plugins # Optional, if you need GitHub Pages specific gems
