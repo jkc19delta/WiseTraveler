@@ -29,10 +29,12 @@ jobs:
 
       - name: Install Dependencies
         run: |
+          export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
           bundle install
 
       - name: Build the Site
         run: |
+          export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
           bundle exec jekyll build --source . --destination _site
 
       - name: Upload artifact
@@ -43,3 +45,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
