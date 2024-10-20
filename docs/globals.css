@@ -75,6 +75,19 @@ footer a:hover {
   color: black;
 }
 
+.link {
+    color: #bdab0e; 
+    text-align: center;
+    padding: 14px 20px; 
+    background-color: #333;
+    text-decoration: none 
+}
+
+.link:hover {
+    background-color: #ddd;
+    color: black; 
+}
+
 /* For mobile devices width 700px */
 @media screen and (max-width: 700px) {
   .row {
