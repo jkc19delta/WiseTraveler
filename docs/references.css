@@ -22,24 +22,29 @@
 }
 
 /* Style for headings */
-.summary h2 {
+.references-section h2 {    /* Changed from .summary to .references-section */
     font-size: 36px;         /* Set heading font size to 36px */
     margin-bottom: 20px;     /* Space between heading and content */
     text-align: center;      /* Center the heading */
 }
 
 /* General styling for reference text */
-.summary p {
+.references-section p {      /* Changed from .summary to .references-section */
     margin: 0;               /* Remove margin for consistent spacing */
     font-size: 16px;         /* Font size for reference text */
     font-weight: normal;     /* Normal font weight */
 }
 
 /* Italicize the source names */
-.summary p i {
+.references-section p i {    /* Changed from .summary to .references-section */
     font-style: italic;      /* Italicize sources */
 }
 
 .tabbed-link {
     margin-left: 20px; 
+}
+
+/* Add padding to the bottom of the references section */
+.references-section {
+    padding-bottom: 20px;    /* 20px padding at the bottom */
 }
