@@ -10,7 +10,7 @@
 
 /* General styling for summary text */
 .summary p {
-    margin: 10px 0;            
+    margin: 10px 30px;            
     font-size: 16px;           
     font-weight: normal;
 }
@@ -18,7 +18,7 @@
 /* Style for the list items */
 .summary ul {
     padding-left: 30px;    /* Indent the list */
-    margin: 0;             /* Remove default margin */
+    margin: 0 30px;             /* Remove default margin */
 }
 
 /* Style for embedded list items */
@@ -37,3 +37,10 @@
 .summary p b {
     font-weight: bold;
 }
+
+#content {
+    align: center;
+    margin: 10px 50px;
+}
+
+
