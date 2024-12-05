@@ -1,0 +1,93 @@
+/* Container for team bio section */
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Style for each team member cell */
+.team td {
+    width: 400px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Style for images */
+.team img {
+    max-width: 100%;
+    height: 300px;
+}
+
+/* General styling for team member text */
+.team p {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/* Make the team member names bold */
+.team p b {
+    font-weight: bold;
+}
+
+/* Header style for the main section */
+.team td:first-child {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* User story section styles */
+.story {
+    margin: 30px auto;
+    max-width: 80%;
+}
+
+/* Style for user story bubbles */
+.story-bubble {
+    max-width: 50%;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+/* Alternating story bubble alignment */
+.story-bubble.left {
+    margin-left: 10%;
+    text-align: left;
+}
+
+.story-bubble.right {
+    margin-left: auto;
+    margin-right: 10%;
+    text-align: right;
+}
+
+/* Styling for the user story author */
+.story-author {
+    font-size: 0.9em;
+    margin-top: 10px;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .story-bubble {
+        max-width: 80%;
+        margin: 15px auto;
+    }
+
+    .story-bubble.left,
+    .story-bubble.right {
+        margin: 15px auto;
+        text-align: center;
+    }
+
+    .story-author {
+        text-align: center;
+    }
+}
